@@ -8,7 +8,7 @@ usages are supported.
 3. Result Key [__conv_ok]
     - == *True* iff types preserved. 
     - *False* == at least one defaulted to string.
-4.) Result Key [__btn_ok]
+4. Result Key [__btn_ok]
     - == *True* when [Okay] was pressed
     - else *False*.
 
