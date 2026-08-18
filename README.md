@@ -52,4 +52,4 @@ python PyCount.py "{'Hits': '0', 'Miss': '0', 'Other': '10'}"
 
 ### PyPi
 
-NOT YET available on [PyPi](https://pypi.org/project/Prompter9000/)
+Also available on [PyPi](https://pypi.org/project/Prompter9000/)
