@@ -2,7 +2,11 @@
 Quick &amp; easy way to edit dictionaries and create counters. Console & programmatic 
 usages are supported.
 
-**NEW:** *Verson 2.0.2*
+**NEW:** *CLI Support.*
+1. Use the ./dist
+2. Enter: *Prompter9000*
+
+**NEW:** *Version 2.5.0*
 1. Data types can now be preserved. 
 2. Boolean detection, as well.
 3. Result Key [__conv_ok]
@@ -12,7 +16,7 @@ usages are supported.
     - == *True* when [Okay] was pressed
     - else *False*.
 
-### Programatic
+### Programmatic
 Edit a dictionary:
 ```
 from Prompter9000.PyEdit import *
@@ -48,4 +52,4 @@ python PyCount.py "{'Hits': '0', 'Miss': '0', 'Other': '10'}"
 
 ### PyPi
 
-Now available on [PyPi](https://pypi.org/project/Prompter9000/)
+NOT YET available on [PyPi](https://pypi.org/project/Prompter9000/)
