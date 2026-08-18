@@ -9,6 +9,10 @@ from collections import OrderedDict
 # Source:
 # https://github.com/soft9000/Blog9000
 
+'''
+Various components for Prompter9000.
+'''
+
 class ClickCounter:
     ''' Tally button clicks. Reset to lask known on error.'''
     def __init__(self, a_counter):
@@ -73,6 +77,40 @@ NOTES: Please encode your dictionary as a single str(dict()) parameter when usin
         self._isOk = False
         self.tk.quit()
 
+    def as_bool(self, _input:str)->bool:
+        ''' Read boolean from the string input.
+        Returns True if input is either 'yes', 'true', or '1'
+        '''
+        if _input:
+            _input = _input.lower()
+            if  (_input[0] == 'y') or \
+                (_input[0] == 't') or \
+                (_input[0] == '1'):
+                    return True
+        return False
+
+    def _convert(self, row, field, value):
+        ''' Attempt to convert + assign a string value
+            back to a row's input type. Default is to 
+            simply assign value as-passed. 
+            Return False on error.
+        '''
+        if not isinstance(row, dict):
+            return False
+        try:
+            target = row[field]
+            if isinstance(target, bool):
+                row[field] = self.as_bool(value)
+            elif isinstance(target, int):
+                row[field] = int(value)
+            elif isinstance(target, float):
+                row[field] = float(value)
+            else:
+                row[field] = value
+            return True
+        except:
+            return False
+        
     @staticmethod
     def begin(fields, title="Counter",
              font_size=16, font_name='TkFixedFont',
@@ -155,13 +193,15 @@ NOTES: Please encode your dictionary as a single str(dict()) parameter when usin
         from collections import OrderedDict
         self.tk.mainloop()
         try:
-            results = OrderedDict()
             if not self._isOk:
-                return results
-
-            for ref in self._dict.keys():
-                results[ref] = (self._dict[ref]).get()
-            return results
+                return dict()
+            self._data['__conv_ok'] = True # New!
+            for tag in self._dict.keys():
+                value = (self._dict[tag]).get()
+                if not self._convert(self._data, tag, value):
+                    self._data['__conv_ok']  = False
+                    self._data[tag] = value    # gigo
+            return dict(self._data)
         finally:
             try:
                 self.tk.destroy()

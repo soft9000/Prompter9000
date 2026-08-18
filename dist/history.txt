@@ -1,0 +1,14 @@
+ Volume in drive C is OS
+ Volume Serial Number is 0C83-AA3E
+
+ Directory of C:\d_drive\USR\code\2022_04_66_Python3\2024_05_29_Prompter9000\Prompter9000\dist
+
+08/18/2026  11:37 AM    <DIR>          .
+08/18/2026  11:37 AM    <DIR>          ..
+08/18/2026  11:37 AM                 0 history.txt
+05/29/2024  01:36 PM             8,613 Prompter9000-2.5.0-py3-none-any.whl
+05/29/2024  01:36 PM             5,566 prompter9000-2.5.0.tar.gz
+08/18/2026  11:37 AM             9,346 prompter9000-2.5.1-py3-none-any.whl
+08/18/2026  11:37 AM             5,954 prompter9000-2.5.1.tar.gz
+               5 File(s)         29,479 bytes
+               2 Dir(s)  704,863,936,512 bytes free

@@ -185,7 +185,7 @@ NOTES: Please encode your dictionary as a single str(dict()) parameter when usin
         return self.show()
 
 
-if __name__ == "__main__":
+def main():
     import sys
     import os
     cmd_name = sys.argv[0]
@@ -213,3 +213,8 @@ if __name__ == "__main__":
         results['__btn_ok'] = True
         print(dict(results))
     print()
+
+
+if __name__ == "__main__":
+    print("Welcome to Prompter9000.")
+    main()
